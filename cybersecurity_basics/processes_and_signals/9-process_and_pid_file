@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Creates a PID file, handles signals
+
 echo $$ > /tmp/myscript.pid
 
-trap "echo 'I hate the kill command; rm -f /tmp/myscript.pid; exit'" SIGTERM
-trap "echo 'Y U no love me?!'" SIGINT
-trap "rm -f /tmp/myscript.pid; exit" SIGQUIT
+trap 'echo "I hate the kill command"; rm -f /tmp/myscript.pid; exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -f /tmp/myscript.pid; exit' SIGQUIT
 
 while true
 do
