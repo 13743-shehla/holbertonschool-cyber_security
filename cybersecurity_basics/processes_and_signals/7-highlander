@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # display to infinity and beyond, with i am invincible on SIGTERM
-trap "echo 'i am invincible!!!' " SIGTERM
+trap "echo 'I am invincible!!!' " SIGTERM
 while true
 do
-echo "to infinity and beyond"
+echo "To infinity and beyond"
 sleep 2
 done
