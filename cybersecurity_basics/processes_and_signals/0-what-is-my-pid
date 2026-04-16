@@ -1,2 +1,3 @@
-#!/bin/bash
-printf "%d\n" &&
+#!/usr/bin/env bash
+# this script displays its own PID
+echo $$
