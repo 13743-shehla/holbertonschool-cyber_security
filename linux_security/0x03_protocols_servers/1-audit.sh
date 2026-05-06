@@ -1,2 +1,3 @@
 #!/bin/bash
+
 grep -v '^#' /etc/ssh/sshd_config | grep -v '^$'
