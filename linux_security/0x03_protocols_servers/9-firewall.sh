@@ -1,3 +1,3 @@
-#!/bin/bash
-iptables -A INPUT -p tcp --dport ssh -j ACCEPT
-iptables -P INPUT DROP
+#!/usr/bin/env bash
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -A INPUT -j DROP
