@@ -2,9 +2,9 @@
 
 echo $$ > /tmp/my_script.pid
 
-trap "echo 'I hate the kill command'" SIGTERM
+trap "echo 'I hate the kill command'; rm /tmp/my_script.pid; exit" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm /tmp/my_script.pid; exit" SIGQUIT SIGTERM
+trap "rm /tmp/my_script.pid; exit" SIGQUIT
 
 while true
 do
