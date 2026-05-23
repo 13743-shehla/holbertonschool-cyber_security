@@ -1,8 +1,8 @@
-#!/bin/bash
-echo $$ > /tmp/myscript.pid
+#!/usr/bin/env bash
+echo "$$" > /tmp/myscript.pid
 
 sigint_handler() {
- echo "Y U no love me?!"
+    echo "Y U no love me?!"
 }
 
 cleanup_and_exit() {
