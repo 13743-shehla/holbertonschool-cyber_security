@@ -1,0 +1,24 @@
+#!/bin/bash
+echo $$ > /tmp/myscript.pid
+
+sigint_handler() {
+ echo "Y U no love me?!"
+}
+
+cleanup_and_exit() {
+    if [ "$1" = "SIGTERM" ]; then
+        echo "I hate the kill command"
+    fi
+    rm -f /tmp/myscript.pid
+    exit 0
+}
+
+trap 'sigint_handler' SIGINT
+trap 'cleanup_and_exit SIGTERM' SIGTERM
+trap 'cleanup_and_exit SIGQUIT' SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 1
+done
