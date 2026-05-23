@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
+# This script creates a PID file and handles SIGINT, SIGTERM, and SIGQUIT signals.
+
+# Write the process ID to the required file path
 echo "$$" > /tmp/myscript.pid
 
+# Function to handle SIGINT (Ctrl+C)
 sigint_handler() {
     echo "Y U no love me?!"
 }
 
+# Function to clean up the PID file and terminate the script gracefully
 cleanup_and_exit() {
     if [ "$1" = "SIGTERM" ]; then
         echo "I hate the kill command"
@@ -13,10 +18,12 @@ cleanup_and_exit() {
     exit 0
 }
 
+# Trap signals according to shellcheck standards
 trap 'sigint_handler' SIGINT
 trap 'cleanup_and_exit SIGTERM' SIGTERM
 trap 'cleanup_and_exit SIGQUIT' SIGQUIT
 
+# Infinite loop to display the message indefinitely
 while true
 do
     echo "To infinity and beyond"
