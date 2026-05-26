@@ -1,6 +1,10 @@
 #!/bin/bash
+
+# Check if the script is being run as root
 if [ "$EUID" -ne 0 ]; then
-  echo "xeta: bu scripti icra etmek ucun sudo ve ya root selahiyyeti lazimdir"
+  echo "Error: This script must be run as root or with sudo."
   exit 1
 fi
-sudo last -n 5
+
+# Display the last 5 login sessions
+last -n 5
