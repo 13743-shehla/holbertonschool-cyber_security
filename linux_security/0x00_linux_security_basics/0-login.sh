@@ -1,3 +1,2 @@
 #!/bin/bash
-[ "$EUID" -ne 0 ] && echo "Please run as root" && exit 1
-last -n 5
+[ "$EUID" -eq 0 ] && last -5 || { echo "Please run as root"; exit 1; }
