@@ -1,1 +1,1 @@
-<?php readfile('FLAG_2.txt'); ?>
+01428d8d08e67b6c63717f9f47e70076 
