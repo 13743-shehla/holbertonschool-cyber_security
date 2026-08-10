@@ -1,3 +1,2 @@
 #!/bin/bash
-
-tail -1000 auth.log | grep "Accepted password" | awk '{print $11}' | sort -u | wc -l
+grep "Accepted" auth.log | awk '{print $(NF-3)}' | sort -u | wc -l
